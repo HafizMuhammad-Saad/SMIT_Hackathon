@@ -34,7 +34,7 @@ export default function Register() {
                     <Grid container direction={{ xs: 'column-reverse', md: 'row' }} sx={{ alignItems: 'center', justifyContent: 'center' }}>
                       <Grid>
                         <Stack spacing={1} sx={{ alignItems: 'center', justifyContent: 'center' }}>
-                          <Typography gutterBottom variant={downMD ? 'h3' : 'h2'} sx={{ color: 'secondary.main', color: '#bbc45a' }}>
+                          <Typography gutterBottom variant={downMD ? 'h3' : 'h2'} sx={{ color: '#bbc45a' }}>
                             Sign up
                           </Typography>
                           <Typography variant="caption" sx={{ fontSize: '16px', textAlign: { xs: 'center', md: 'inherit' } }}>
