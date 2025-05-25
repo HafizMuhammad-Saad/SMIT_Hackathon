@@ -4,7 +4,7 @@ import dashboard from './dashboard';
 // import other from './other';
 import events from './event';
 // import profile from './profile';
-import adminTools from './admintools';
+import adminTools from './adminTools';
 
 
 // ==============================|| MENU ITEMS ||============================== //

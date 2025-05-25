@@ -142,7 +142,7 @@ export default function TotalOrderLineChartCard({ isLoading, approvedAmount }) {
                             color: 'primary.200'
                           }}
                         >
-                          Total Loan Requests
+                          Total Events Requests
                         </Typography>
                       </Grid>
                     </Grid>

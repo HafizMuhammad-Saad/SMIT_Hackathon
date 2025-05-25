@@ -47,7 +47,7 @@ export default function PopularCard({ isLoading }) {
               <Grid size={12}>
                 <Grid container sx={{ alignContent: 'center', justifyContent: 'space-between' }}>
                   <Grid>
-                    <Typography variant="h4">Popular Loans</Typography>
+                    <Typography variant="h4">Popular events</Typography>
                   </Grid>
                   <Grid>
                     <IconButton size="small" sx={{ mt: -0.625 }}>

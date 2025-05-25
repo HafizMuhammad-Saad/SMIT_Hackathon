@@ -42,8 +42,8 @@ export default function EarningCard2({ isLoading}) {
   async function fetchStats() {
     try {
       const { data, error } = await supabase
-        .from('loan_requests')
-        .select('amount,status')
+        .from('events_table')
+        .select('location,status')
         .eq('user_id', user.id);
 
       if (data) {
@@ -217,7 +217,7 @@ export default function EarningCard2({ isLoading}) {
                   Rejected: {stats.rejected} (${stats.rejectedAmount})
                 </Typography>
                 <Typography sx={{ fontSize: '1.25rem', fontWeight: 600, mb: 1 }}>
-                  Total Amount: ${stats.totalAmount}
+                  Total Events: ${stats.totalAmount}
                 </Typography>
               </Grid>
               {/* ...rest of your card... */}
