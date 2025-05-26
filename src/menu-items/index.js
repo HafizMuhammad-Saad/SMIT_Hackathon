@@ -3,14 +3,14 @@ import dashboard from './dashboard';
 // import utilities from './utilities';
 // import other from './other';
 import events from './event';
-// import profile from './profile';
+import profile from './profile';
 import adminTools from './adminTools';
 
 
 // ==============================|| MENU ITEMS ||============================== //
 
 // Base items for all users
-const baseMenuItems = [dashboard, events];
+const baseMenuItems = [dashboard, events, profile];
 
 // Admin-only items
 const adminMenuItems = [adminTools];

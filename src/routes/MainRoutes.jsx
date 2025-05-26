@@ -10,7 +10,7 @@ import AdminRoute from './AdminRoutes';
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
 const DashboardAdmin = Loadable(lazy(() => import('views/dashboard/Admin')));
-const Loans = Loadable(lazy(() => import('views/Loans')));
+const EventsAdmin = Loadable(lazy(() => import('views/EventsAdmin')));
 const Settings = Loadable(lazy(() => import('views/Settings')));
 
 // utilities routing
@@ -56,7 +56,7 @@ const MainRoutes = {
       children: [
         {
           path: 'loans',
-          element: <AdminRoute element={<Loans />} />
+          element: <AdminRoute element={<EventsAdmin />} />
         },
         {
           path: 'settings',
