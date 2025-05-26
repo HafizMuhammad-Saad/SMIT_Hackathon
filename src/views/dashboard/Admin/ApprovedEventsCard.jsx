@@ -26,17 +26,21 @@ import ArchiveTwoToneIcon from '@mui/icons-material/ArchiveOutlined';
 import { supabase } from '../../../service/supabase';
 import { useAuth } from '../../../contexts/AuthContext';
 
-export default function EarningCard({ isLoading}) {
+export default function ApprovedEvents({ isLoading}) {
   const [amount, setAmount] = useState([]);
   const { user } = useAuth();
 
   async function totalAmount() {
     try {
-      const { data, error } = await supabase.from('events_table').eq('status', 'approved').select();
-      console.log(data);
+      const { data, error } = await supabase.from('events_table').select('*').eq('status', 'approved')
+      // console.log('Data fetched:', data);
       
       if (data) {
-      setAmount(data.length)
+        const total = data.length;
+        // console.log('Total events:', total);
+        setAmount(total);
+
+        // setAmount(data)
       }
     } catch (error) {
       console.log(error);
@@ -164,7 +168,7 @@ export default function EarningCard({ isLoading}) {
               <Grid>
                 <Grid container sx={{ alignItems: 'center' }}>
                   <Grid>
-                    <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 1, mt: 1.75, mb: 0.75 }}>${amount}</Typography>
+                    <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 1, mt: 1.75, mb: 0.75 }}>{amount}</Typography>
                   </Grid>
                   <Grid>
                     <Avatar
@@ -188,7 +192,7 @@ export default function EarningCard({ isLoading}) {
                     color: 'secondary.200'
                   }}
                 >
-                  Total Events Approved
+                  Approved Events
                 </Typography>
               </Grid>
             </Grid>
@@ -199,4 +203,4 @@ export default function EarningCard({ isLoading}) {
   );
 }
 
-EarningCard.propTypes = { isLoading: PropTypes.bool };
+ApprovedEvents.propTypes = { isLoading: PropTypes.bool };

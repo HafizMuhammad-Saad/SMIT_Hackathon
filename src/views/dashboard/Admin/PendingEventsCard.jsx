@@ -119,7 +119,7 @@ export default function TotalOrderLineChartCard({ isLoading, approvedAmount }) {
                         {timeValue ? (
                           <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 1, mt: 1.75, mb: 0.75 }}>{approvedAmount}</Typography>
                         ) : (
-                          <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 1, mt: 1.75, mb: 0.75 }}>$961</Typography>
+                          <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 1, mt: 1.75, mb: 0.75 }}>{approvedAmount}</Typography>
                         )}
                       </Grid>
                       <Grid>
@@ -142,7 +142,7 @@ export default function TotalOrderLineChartCard({ isLoading, approvedAmount }) {
                             color: 'primary.200'
                           }}
                         >
-                          Total Events Requests
+                          Pending Events
                         </Typography>
                       </Grid>
                     </Grid>

@@ -26,19 +26,18 @@ import ArchiveTwoToneIcon from '@mui/icons-material/ArchiveOutlined';
 import { supabase } from '../../../service/supabase';
 import { useAuth } from '../../../contexts/AuthContext';
 
-export default function EarningCard({ isLoading}) {
+export default function ApprovedEvents({ isLoading}) {
   const [amount, setAmount] = useState([]);
   const { user } = useAuth();
 
   async function totalAmount() {
     try {
-      const { data, error } = await supabase.from('loan_requests').select('amount').eq('user_id', user.id);
-
+      const { data, error } = await supabase.from('events_table').select('*').eq('status', 'approved')
+      // console.log('Data fetched:', data);
+      
       if (data) {
-        const total = data.reduce((amount, req) => {
-          return amount + req.amount;
-        }, 0);
-        console.log(total);
+        const total = data.length;
+        // console.log('Total events:', total);
         setAmount(total);
 
         // setAmount(data)
@@ -169,7 +168,7 @@ export default function EarningCard({ isLoading}) {
               <Grid>
                 <Grid container sx={{ alignItems: 'center' }}>
                   <Grid>
-                    <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 1, mt: 1.75, mb: 0.75 }}>${amount}</Typography>
+                    <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 1, mt: 1.75, mb: 0.75 }}>{amount}</Typography>
                   </Grid>
                   <Grid>
                     <Avatar
@@ -193,7 +192,7 @@ export default function EarningCard({ isLoading}) {
                     color: 'secondary.200'
                   }}
                 >
-                  Total Loan Amount
+                  Approved Events
                 </Typography>
               </Grid>
             </Grid>
@@ -204,4 +203,4 @@ export default function EarningCard({ isLoading}) {
   );
 }
 
-EarningCard.propTypes = { isLoading: PropTypes.bool };
+ApprovedEvents.propTypes = { isLoading: PropTypes.bool };
